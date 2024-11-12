@@ -1,0 +1,39 @@
+.about-us {
+  padding: 60px 20px;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.about-title {
+  color: #F8D307;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-description, .about-mission {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.about-values {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.value {
+  max-width: 200px;
+}
+
+.value h3 {
+  color: #F8D307;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.value p {
+  color: #333;
+  font-size: 1rem;
+}

@@ -1,0 +1,43 @@
+.business {
+  padding: 60px 20px;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+.business-title {
+  color: #F8D307;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.business-description, .business-model {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.business-stats {
+  margin-top: 30px;
+}
+
+.business-stats h3 {
+  color: #F8D307;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.business-partner-button {
+  background-color: #F8D307;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.business-partner-button:hover {
+  background-color: #ffd700;
+}

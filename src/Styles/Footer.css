@@ -1,0 +1,30 @@
+.footer {
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: 'Quicksand', sans-serif;
+  border-top: 2px solid #F8D307;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.footer-socials .social-icon {
+  color: #F8D307;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-socials .social-icon:hover {
+  color: #333;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
