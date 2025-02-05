@@ -1,30 +1,88 @@
 .footer {
-  background-color: #ffffff;
-  color: #333;
-  text-align: center;
-  padding: 20px 10px;
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 28px 18px;
+  margin-right: 42px;
+  margin-left: 42px;
+  background-color: var(--white);
+  border-radius: 50px 50px 0 0;
+  border-right: 3px solid var(--primary);
+  border-top: 3px solid var(--primary);
+  border-left: 3px solid var(--primary);
   font-family: 'Quicksand', sans-serif;
-  border-top: 2px solid #F8D307;
 }
 
-.footer-socials {
+.footer .branding{
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 10px 0;
+  flex-direction: column;
+  align-items: start;
+}
+
+.footer .branding p{
+  font-size: 12px;
+  margin: 0;
+}
+
+.footer .logo {
+  color: var(--primary);
+}
+
+.footer .mailing{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap : 10px;
+}
+
+.footer .mailing img{
+  width: 24px;
+  height: 24px;
+}
+
+/* .footer p {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 16px;
+} */
+
+.footer a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.footer .links {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-self: center;
+  /* Matching the nav gap from header */
+}
+
+.footer .links a {
+  font-size: 14px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+/* .footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .footer-socials .social-icon {
-  color: #F8D307;
+  color: var(--secondary);
   text-decoration: none;
   font-weight: 600;
 }
 
 .footer-socials .social-icon:hover {
-  color: #333;
-}
-
-.footer p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-}
+  color: var(--primary);
+} */
