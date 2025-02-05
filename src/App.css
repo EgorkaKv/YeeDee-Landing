@@ -27,7 +27,7 @@
 }
 
 .benefits {
-  margin-top: 200px;
+  padding: 150px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +38,9 @@
 .benefits-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
 }
 
 .benefits-info:first-child {
@@ -46,7 +48,14 @@
   text-align: end;
 }
 
-.benefits-info { display: flex; flex-direction: column; }
+.benefits-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Вирівнює контент по центру */
+  text-align: center;
+  max-width: 300px;
+}
 
 .benefits-right .benefits-info {
   align-items: start;
@@ -62,42 +71,91 @@
 }
 
 .how-it-works {
-  padding: 40px;
+  padding: 60px 20px;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.how-it-works ol {
-  list-style: none;
-  padding: 0;
+.how-it-works-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  margin-top: 40px;
 }
 
-.how-it-works li {
-  margin: 20px 0;
+.how-it-works-step {
+  display:flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 20px;
+  max-width: 1600px;
+  padding: relative;
+}
+
+.how-it-works-step:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+
+.how-it-works-step img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* .how-it-works-line {
+  position: absolute;
+  width: 4px;
+  background-color: var(--primary);
+  top: 50px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+} */
+
+.how-it-works-step:last-child .how-it-works-line {
+  display: none;
+}
+
+.how-it-works-text {
+  max-width: 400px;
+  font-size: 18px;
+  color: var(--secondary);
 }
 
 .join {
-  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 150px 0;
   text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.join p {
+  max-width: 620px;
+  margin-top: 30px;
+  font-size: 18px;
 }
 
 .join-button {
+  width: 280px;
   padding: 10px 20px;
+  margin-top: 30px;
   background-color: #F8D307;
   border: none;
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-}
-
-.footer {
-  padding: 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.footer .links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #000;
 }

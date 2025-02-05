@@ -9,6 +9,10 @@ import dollarIcon from "./icons/dollar_icon.svg";
 import peopleIcon from "./icons/people_icon.svg";
 import planetIcon from "./icons/planet_icon.svg";
 import phoneImg from "./icons/phone_img.png";
+import clipboardImg from "./icons/clipboard_icon.svg";
+import cartImg from "./icons/cart_icon.svg";
+import orderImg from "./icons/order_icon.svg";
+import mailImg from "./icons/mail_icon.svg";
 
 const App = () => {
     return (
@@ -61,17 +65,30 @@ const App = () => {
             {/* How it Works Section */}
             <section id="how-it-works" className="how-it-works">
                 <h2>Як це працює?</h2>
-                <ol>
-                    <li>
-                        Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку придатності.
-                    </li>
-                    <li>
-                        Люди переглядають доступні товари та бронюють їх для себе через нашу платформу.
-                    </li>
-                    <li>
-                        Коли покупець забирає товар в магазині, продавець отримує свої кошти.
-                    </li>
-                </ol>
+                <div className="how-it-works-container">
+                    <div className="how-it-works-step">
+                        <img src={clipboardImg} alt="Step 1" />
+                        <div className="how-it-works-text">
+                            <p>Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку придатності.</p>
+                        </div>
+                        <div className="how-it-works-line"></div>
+                    </div>
+
+                    <div className="how-it-works-step">
+                        <img src={cartImg} alt="Step 2" />
+                        <div className="how-it-works-text">
+                            <p>Люди переглядають доступні товари та бронюють їх для себе через нашу платформу.</p>
+                        </div>
+                        <div className="how-it-works-line"></div>
+                    </div>
+
+                    <div className="how-it-works-step">
+                        <img src={orderImg} alt="Step 3" />
+                        <div className="how-it-works-text">
+                            <p>Коли покупець забирає товар в магазині, продавець отримує свої кошти.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             {/* Join Us Section */}
@@ -80,18 +97,22 @@ const App = () => {
                 <p>
                     Приєднуйтеся до проекту, що змінює підхід до харчування, бізнесу та екології. Разом ми створюємо майбутнє, де виграють всі!
                 </p>
-                <button className="join-button">Долучитися</button>
+                <button className="join-button">Доєднатися</button>
             </section>
 
             {/* Footer */}
             <footer className="footer">
-                <div className="footer-content">
-                    <p>© 2024 YeeDee. Всі права захищені.</p>
+                <div className="branding">
+                    <h3 className="logo">YeeDee</h3>
+                    <p>© 2025 YeeDee. Всі права захищені.</p>
+                </div>
+                <div className="mailing">
+                    <img src={mailImg} alt="Main" />
                     <a href="mailto:info@yeedee.com.ua">info@yeedee.com.ua</a>
-                    <div className="links">
-                        <a href="#privacy">Політика конфіденційності</a>
-                        <a href="#terms">Умови використання</a>
-                    </div>
+                </div>
+                <div className="links">
+                    <a href="#privacy">Політика конфіденційності</a>
+                    <a href="#terms">Умови використання</a>
                 </div>
             </footer>
         </div>
