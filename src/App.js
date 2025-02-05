@@ -13,10 +13,17 @@ import clipboardImg from "./icons/clipboard_icon.svg";
 import cartImg from "./icons/cart_icon.svg";
 import orderImg from "./icons/order_icon.svg";
 import mailImg from "./icons/mail_icon.svg";
+import qr_code from "./icons/qr_code.png";
 
 const App = () => {
     return (
         <div className="App">
+            <div className="qr_code">
+                <span>Скануй або натискай</span>
+                <a href='https://t.me/YeeStore_Bot'>
+                    <img src={qr_code}  alt="qr link to telegram"/>
+                </a>
+            </div>
             {/* Header */}
             <header className="header">
                 <h2 className="logo">YeeDee</h2>
