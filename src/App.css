@@ -13,11 +13,11 @@
 }
 
 .hero {
-  margin-top: 156px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 25px;
   padding: 0 20px;
 }
 
@@ -27,7 +27,11 @@
 }
 
 .benefits {
-  padding: 40px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1028px;
   background-color: #fff;
 }
 
@@ -37,8 +41,24 @@
   justify-content: space-around;
 }
 
-.phone-image {
-  width: 200px;
+.benefits-info:first-child {
+  align-items: end;
+  text-align: end;
+}
+
+.benefits-info { display: flex; flex-direction: column; }
+
+.benefits-right .benefits-info {
+  align-items: start;
+  text-align: start;
+}
+
+.benefits-info img {
+  height: 49px;
+}
+
+.benefits-phone {
+  width: 270px;
 }
 
 .how-it-works {

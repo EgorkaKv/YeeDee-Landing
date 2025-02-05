@@ -5,6 +5,10 @@ import "./styles/Main.css";
 import "./styles/Footer.css";
 import telegramLogo from "./icons/telegram_logo.svg";
 import yeedeeLogo from "./icons/yeedee_logo.svg";
+import dollarIcon from "./icons/dollar_icon.svg";
+import peopleIcon from "./icons/people_icon.svg";
+import planetIcon from "./icons/planet_icon.svg";
+import phoneImg from "./icons/phone_img.png";
 
 const App = () => {
     return (
@@ -36,11 +40,20 @@ const App = () => {
             <section id="benefits" className="benefits">
                 <h1>Інноваційна платформа, яка допомагає</h1>
                 <div className="benefits-container">
-                    <img src="phone-placeholder.png" alt="YeeDee App" className="phone-image" />
-                    <div className="benefits-text">
-                        <p>Бізнесам зменшувати втрати продуктів, продаючи товари з наближеним терміном придатності.</p>
-                        <p>Покупцям знаходити вигідні пропозиції.</p>
-                        <p>Суспільству зменшувати харчові відходи та дбати про довкілля.</p>
+                    <div className='benefits-info'>
+                        <img src={dollarIcon} alt='dollar icon'/>
+                        <p>Бізнесам зменшувати втрати продуктів, продаючи товари з наближеним терміном придатності</p>
+                    </div>
+                    <img className='benefits-phone' src={phoneImg} alt='yedee phone'/>
+                    <div className='benefits-right'>
+                        <div className='benefits-info'>
+                            <img src={peopleIcon} alt='people icon'/>
+                            <p>Покупцям знаходити вигідні пропозиції</p>
+                        </div>
+                        <div className='benefits-info'>
+                            <img src={planetIcon} alt='planet icon'/>
+                            <p>Суспільству зменшувати харчові відходи та дбати про довкілля</p>
+                        </div>
                     </div>
                 </div>
             </section>

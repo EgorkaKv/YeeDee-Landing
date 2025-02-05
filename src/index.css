@@ -22,12 +22,13 @@ h1 {
 
   /* h_1(bold) */
   font-family: Inter, sans-serif;
-  font-size: 50px;
+  font-size: 45px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 
   margin: 0;
+  padding: 0;
 }
 
 h2 {
@@ -35,7 +36,7 @@ h2 {
 
   /* h_2(semi)bold) */
   font-family: Inter, sans-serif;
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -51,6 +52,9 @@ h3 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  margin: 0;
+  padding: 0;
 }
 
 h4 {
@@ -62,6 +66,9 @@ h4 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  margin: 0;
+  padding: 0;
 }
 
 p {
