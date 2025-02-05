@@ -66,27 +66,24 @@ const App = () => {
             <section id="how-it-works" className="how-it-works">
                 <h2>Як це працює?</h2>
                 <div className="how-it-works-container">
-                    <div className="how-it-works-step">
-                        <img src={clipboardImg} alt="Step 1" />
-                        <div className="how-it-works-text">
-                            <p>Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку придатності.</p>
-                        </div>
-                        <div className="how-it-works-line"></div>
+                    <div className="how-it-works-left">
+                        <p>Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку придатності</p>
+                        <span className="how-it-works-number">2</span>
+                        <p>Коли покупець забирає товар в магазині, продавець отримує свої кошти</p>
                     </div>
 
-                    <div className="how-it-works-step">
-                        <img src={cartImg} alt="Step 2" />
-                        <div className="how-it-works-text">
-                            <p>Люди переглядають доступні товари та бронюють їх для себе через нашу платформу.</p>
-                        </div>
+                    <div className="how-it-works-center">
+                        <img src={clipboardImg} alt="clipboard"/>
                         <div className="how-it-works-line"></div>
+                        <img src={cartImg} alt="Cart"/>
+                        <div className="how-it-works-line"></div>
+                        <img src={orderImg} alt="Package"/>
                     </div>
 
-                    <div className="how-it-works-step">
-                        <img src={orderImg} alt="Step 3" />
-                        <div className="how-it-works-text">
-                            <p>Коли покупець забирає товар в магазині, продавець отримує свої кошти.</p>
-                        </div>
+                    <div className="how-it-works-right">
+                        <span className="how-it-works-number">1</span>
+                        <p>Люди переглядають доступні товари та бронюють їх для себе через нашу платформу.</p>
+                        <span className="how-it-works-number">3</span>
                     </div>
                 </div>
             </section>
@@ -94,9 +91,9 @@ const App = () => {
             {/* Join Us Section */}
             <section id="join" className="join">
                 <h2>Долучайтеся до спільноти!</h2>
-                <p>
+                <h3>
                     Приєднуйтеся до проекту, що змінює підхід до харчування, бізнесу та екології. Разом ми створюємо майбутнє, де виграють всі!
-                </p>
+                </h3>
                 <button className="join-button">Доєднатися</button>
             </section>
 
