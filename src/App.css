@@ -222,25 +222,29 @@
 
 /* for mobile */
 @media (max-width:500px) {
-  h1 {
-    font-size: 40px;
-  }
+  h1 { font-size: 30px;}
   .hero {
     margin: 0;
     padding: 0 26px 0;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
   }
-  .hero-content{
-    align-self: center;
-  }
+  .hero-content{align-self: center;}
 
-  .hero h3 {
-    font-size: 18px;
-  }
+  .hero h3 {font-size: 18px;}
 
-  .hero img[alt="YeeDee logo"] {
-    width: 100px;
+  .hero img[alt="YeeDee logo"] {width: 100px;}
+
+  @media (max-height: 760px) {
+    /*.hero{
+      padding: 70px 26px 0;
+      height: calc(100vh - 70px);
+    }*/
+    .hero-content{
+      padding-top: 70px;
+      gap: 35px;
+    }
+
   }
 
   .try-tg-btn{
@@ -267,7 +271,7 @@
   .benefits {
     padding: 42px 26px 0;
     background: var(--primary);
-    height: calc(100vh - 62px - 42px);
+    min-height: calc(100vh - 62px - 42px);
   }
   .benefits-phone {
     display: none;
@@ -315,9 +319,21 @@
     order: 3;
     max-width: 307px;
   }
+  
+  @media (max-height: 730px) {
+    .benefits-container {
+      gap: 30px;
+    }
+
+  }
+  @media(max-height: 700px){
+    .benefits{
+      min-height: calc(100vh);
+    }
+  }
 
   .how-it-works {
-    height: calc(100vh - 62px - 82px);
+    min-height: calc(100vh - 62px - 82px);
     padding: 82px 20px 0;
     align-self: start;
     width: calc(100% - 40px);
@@ -362,22 +378,38 @@
     gap: 162px;
   }
 
+  /*@media (max-height: 720px) {
+    .how-it-works-line{
+      height: 80px;
+    }
+
+  }*/
+
   .join {
     padding: 100px 30px 0;
     width: calc(100% - 60px);
-    height: calc(100vh - 62px - 100px);
+    min-height: calc(100vh - 62px - 100px);
   }
   .join h3 {
     font-size: 20px;
     font-weight: 600;
   }
 
+ @media (max-height: 700px) {
+   .join{
+     padding-bottom: 50px;
+   }
+ }
 
+  @media (max-height: 680px) {
+    .join {
+      padding-bottom: 80px;
+    }
+  }
 
-
-
-
-
-
-
+  @media (max-height: 660px) {
+    .join {
+      padding-bottom: 120px;
+    }
+  }
 }
