@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "./App.css";
 import "./styles/Header.css";
 import "./styles/Main.css";
@@ -16,6 +16,66 @@ import mailImg from "./icons/mail_icon.svg";
 import qr_code from "./icons/qr_code.png";
 
 const App = () => {
+    const headerRef = useRef(null);
+    const logoRef = useRef(null);
+    const dividerRef = useRef(null);
+    const benefitsRef = useRef(null);
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 500);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 500);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    useEffect(() => {
+        if (!isSmallScreen) return;
+        console.log('into useEffect')
+
+        const header = headerRef.current;
+        const logo = logoRef.current;
+        const divider = dividerRef.current;
+        const benefits = benefitsRef.current;
+
+        console.log('header: ', header)
+        console.log('logo: ', logo)
+        console.log('divider: ', divider)
+        console.log('benefits: ', benefits)
+
+
+        if (!header || !logo || !divider || !benefits) return;
+        console.log('all const are defined')
+
+        const handleScroll = () => {
+            const benefitsTop = benefits.getBoundingClientRect().top;
+            const benefitsBottom = benefits.getBoundingClientRect().bottom;
+            const headerHeight = header.offsetHeight;
+
+            requestAnimationFrame(() => {
+                if (benefitsTop <= headerHeight) {
+                    header.style.backgroundColor = "var(--primary)";
+                    divider.style.backgroundColor = "#FFFFFF";
+                    logo.style.color = "#FFFFFF";
+                } else {
+                    header.style.backgroundColor = "var(--white)";
+                    divider.style.backgroundColor = "var(--primary)";
+                    logo.style.color = "var(--primary)";
+                }
+                if (benefitsBottom - headerHeight <= 0) {
+                    header.style.backgroundColor = "var(--white)";
+                    divider.style.backgroundColor = "var(--primary)";
+                    logo.style.color = "var(--primary)";
+                }
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isSmallScreen]);
+
     return (
         <div className="App">
             <div className="qr_code">
@@ -25,8 +85,8 @@ const App = () => {
                 </a>
             </div>
             {/* Header */}
-            <header className="header">
-                <h2 className="logo">YeeDee</h2>
+            <header ref={headerRef} className="header">
+                <h2 ref={logoRef} className="logo">YeeDee</h2>
                 <nav className="nav">
                     <ul>
                         <li><a href="#about">Про нас</a></li>
@@ -36,32 +96,39 @@ const App = () => {
                 </nav>
                 <a href='https://t.me/YeeStore_Bot' className="bot-button">
                     <img src={telegramLogo} alt='telegram logo' />
-                    Наш Telegram bot
+                    <span>Наш Telegram bot</span>
                 </a>
             </header>
+            <div ref={dividerRef} className="header-div"></div>
 
             {/* Hero Section */}
             <section className="hero">
+                <div className="hero-content">
                 <h1>YeeDee — їжа з вигодою для всіх</h1>
                 <h3>Це проект, місія якого боротися з харчовими відходами. Ми створюємо сервіси, що об'єднують людей і бізнес навколо ідеї розумного споживання продуктів харчування.</h3>
                 <img src={yeedeeLogo} alt="YeeDee logo" className="img_logo" />
+                    <a href="https://t.me/YeeStore_Bot" className="try-tg-btn">
+                        <span>Спробувати в Telegram</span>
+                        <img src={telegramLogo} alt="Telegram logo"/>
+                    </a>
+                </div>
             </section>
 
             {/* Benefits Section */}
-            <section id="benefits" className="benefits">
+            <section ref={benefitsRef} id="benefits" className="benefits">
                 <h1>Інноваційна платформа, яка допомагає</h1>
                 <div className="benefits-container">
-                    <div className='benefits-info'>
+                    <div className='benefits-info' id="benefits-business">
                         <img src={dollarIcon} alt='dollar icon'/>
                         <p>Бізнесам зменшувати втрати продуктів, продаючи товари з наближеним терміном придатності</p>
                     </div>
                     <img className='benefits-phone' src={phoneImg} alt='yedee phone'/>
                     <div className='benefits-right'>
-                        <div className='benefits-info'>
+                        <div className='benefits-info' id="benefits-people">
                             <img src={peopleIcon} alt='people icon'/>
                             <p>Покупцям знаходити вигідні пропозиції</p>
                         </div>
-                        <div className='benefits-info'>
+                        <div className='benefits-info' id="benefits-planet">
                             <img src={planetIcon} alt='planet icon'/>
                             <p>Суспільству зменшувати харчові відходи та дбати про довкілля</p>
                         </div>
@@ -74,11 +141,16 @@ const App = () => {
                 <h2>Як це працює?</h2>
                 <div className="how-it-works-container">
                     <div className="how-it-works-left">
-                        <p>Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку придатності</p>
+                        <p>Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку
+                            придатності</p>
                         <span className="how-it-works-number">2</span>
                         <p>Коли покупець забирає товар в магазині, продавець отримує свої кошти</p>
                     </div>
-
+                    <div className="hiw-mobile-numbers">
+                        <span className="how-it-works-number">1</span>
+                        <span className="how-it-works-number">2</span>
+                        <span className="how-it-works-number">3</span>
+                    </div>
                     <div className="how-it-works-center">
                         <img src={clipboardImg} alt="clipboard"/>
                         <div className="how-it-works-line"></div>
@@ -86,9 +158,14 @@ const App = () => {
                         <div className="how-it-works-line"></div>
                         <img src={orderImg} alt="Package"/>
                     </div>
-
+                    <div className="hiw-mobile-text">
+                        <p>Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку
+                            придатності</p>
+                        <p>Люди переглядають доступні товари та бронюють їх для себе через нашу платформу.</p>
+                        <p>Коли покупець забирає товар в магазині, продавець отримує свої кошти</p>
+                    </div>
                     <div className="how-it-works-right">
-                        <span className="how-it-works-number">1</span>
+                    <span className="how-it-works-number">1</span>
                         <p>Люди переглядають доступні товари та бронюють їх для себе через нашу платформу.</p>
                         <span className="how-it-works-number">3</span>
                     </div>
