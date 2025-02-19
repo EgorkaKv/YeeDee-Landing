@@ -33,21 +33,21 @@ const App = () => {
 
     useEffect(() => {
         if (!isSmallScreen) return;
-        console.log('into useEffect')
+        // console.log('into useEffect')
 
         const header = headerRef.current;
         const logo = logoRef.current;
         const divider = dividerRef.current;
         const benefits = benefitsRef.current;
 
-        console.log('header: ', header)
+/*        console.log('header: ', header)
         console.log('logo: ', logo)
         console.log('divider: ', divider)
-        console.log('benefits: ', benefits)
+        console.log('benefits: ', benefits)*/
 
 
         if (!header || !logo || !divider || !benefits) return;
-        console.log('all const are defined')
+        // console.log('all const are defined')
 
         const handleScroll = () => {
             const benefitsTop = benefits.getBoundingClientRect().top;
@@ -78,16 +78,10 @@ const App = () => {
 
     return (
         <div className="App">
-            <div className="qr_code">
-                <span>Скануй або натискай</span>
-                <a href='https://t.me/YeeStore_Bot'>
-                    <img src={qr_code}  alt="qr link to telegram"/>
-                </a>
-            </div>
             {/* Header */}
-            <header ref={headerRef} className="header">
+            <header id="header" ref={headerRef} className="header">
                 <h2 ref={logoRef} className="logo">YeeDee</h2>
-                <nav className="nav">
+                <nav id="navigate" className="nav">
                     <ul>
                         <li><a href="#about">Про нас</a></li>
                         <li><a href="#benefits">Вигода</a></li>
@@ -95,41 +89,48 @@ const App = () => {
                     </ul>
                 </nav>
                 <a href='https://t.me/YeeStore_Bot' className="bot-button">
-                    <img src={telegramLogo} alt='telegram logo' />
+                    <img src={telegramLogo} alt='telegram logo'/>
                     <span>Наш Telegram bot</span>
                 </a>
             </header>
             <div ref={dividerRef} className="header-div"></div>
+            <div className="qr_code">
+                <span>Скануй або натискай</span>
+                <a href='https://t.me/YeeStore_Bot'>
+                    <img src={qr_code} alt="qr link to telegram"/>
+                </a>
+            </div>
 
             {/* Hero Section */}
-            <section className="hero">
+            <section id="about" className="hero">
                 <div className="hero-content">
-                <h1>YeeDee — їжа з вигодою для всіх</h1>
-                <h3>Це проект, місія якого боротися з харчовими відходами. Ми створюємо сервіси, що об'єднують людей і бізнес навколо ідеї розумного споживання продуктів харчування.</h3>
-                <img src={yeedeeLogo} alt="YeeDee logo" className="img_logo" />
+                    <h1>YeeDee — їжа з вигодою для всіх</h1>
+                    <h3>Це проект, місія якого боротися з харчовими відходами. Ми створюємо сервіси, що об'єднують людей
+                        і бізнес навколо ідеї розумного споживання продуктів харчування.</h3>
+                    <img src={yeedeeLogo} alt="Логотип YeeDee - економія на продуктах" className="img_logo"/>
                     <a href="https://t.me/YeeStore_Bot" className="try-tg-btn">
                         <span>Спробувати в Telegram</span>
-                        <img src={telegramLogo} alt="Telegram logo"/>
+                        <img src={telegramLogo} alt="Логотип Telegram"/>
                     </a>
                 </div>
             </section>
 
             {/* Benefits Section */}
-            <section ref={benefitsRef} id="benefits" className="benefits">
-                <h1>Інноваційна платформа, яка допомагає</h1>
+            <section id="benefits" className="benefits" ref={benefitsRef}>
+                <h2>Інноваційна платформа, яка допомагає</h2>
                 <div className="benefits-container">
-                    <div className='benefits-info' id="benefits-business">
-                        <img src={dollarIcon} alt='dollar icon'/>
+                    <div id="benefits-business" className='benefits-info'>
+                        <img src={dollarIcon} alt='dollar переваги для бізнесу' loading="lazy"/>
                         <p>Бізнесам зменшувати втрати продуктів, продаючи товари з наближеним терміном придатності</p>
                     </div>
-                    <img className='benefits-phone' src={phoneImg} alt='yedee phone'/>
+                    <img className='benefits-phone' src={phoneImg} alt='yeedee phone' loading="lazy"/>
                     <div className='benefits-right'>
-                        <div className='benefits-info' id="benefits-people">
-                            <img src={peopleIcon} alt='people icon'/>
+                        <div id="benefits-people" className='benefits-info'>
+                            <img src={peopleIcon} alt='people переваги для людей' loading="lazy"/>
                             <p>Покупцям знаходити вигідні пропозиції</p>
                         </div>
-                        <div className='benefits-info' id="benefits-planet">
-                            <img src={planetIcon} alt='planet icon'/>
+                        <div id="benefits-planet" className='benefits-info'>
+                            <img src={planetIcon} alt='planet переваги для планети' loading="lazy"/>
                             <p>Суспільству зменшувати харчові відходи та дбати про довкілля</p>
                         </div>
                     </div>
@@ -152,11 +153,11 @@ const App = () => {
                         <span className="how-it-works-number">3</span>
                     </div>
                     <div className="how-it-works-center">
-                        <img src={clipboardImg} alt="clipboard"/>
+                        <img src={clipboardImg} alt="clipboard вибір товара" loading="lazy"/>
                         <div className="how-it-works-line"></div>
-                        <img src={cartImg} alt="Cart"/>
+                        <img src={cartImg} alt="Cart додати товар в кошик" loading="lazy"/>
                         <div className="how-it-works-line"></div>
-                        <img src={orderImg} alt="Package"/>
+                        <img src={orderImg} alt="Package забрати своє замовлення" loading="lazy"/>
                     </div>
                     <div className="hiw-mobile-text">
                         <p>Через сервіс YeeDee бізнес виставляє на продаж зі знижкою товари на межі строку
@@ -165,7 +166,7 @@ const App = () => {
                         <p>Коли покупець забирає товар в магазині, продавець отримує свої кошти</p>
                     </div>
                     <div className="how-it-works-right">
-                    <span className="how-it-works-number">1</span>
+                        <span className="how-it-works-number">1</span>
                         <p>Люди переглядають доступні товари та бронюють їх для себе через нашу платформу.</p>
                         <span className="how-it-works-number">3</span>
                     </div>
@@ -173,10 +174,11 @@ const App = () => {
             </section>
 
             {/* Join Us Section */}
-            <section id="join" className="join">
+            <section id="partnership" className="join">
                 <h2>Долучайтеся до спільноти!</h2>
                 <h3>
-                    Приєднуйтеся до проекту, що змінює підхід до харчування, бізнесу та екології. Разом ми створюємо майбутнє, де виграють всі!
+                    Приєднуйтеся до проекту, що змінює підхід до харчування, бізнесу та екології. Разом ми створюємо
+                    майбутнє, де виграють всі!
                 </h3>
                 <button className="join-button">Доєднатися</button>
             </section>
@@ -188,7 +190,7 @@ const App = () => {
                     <p>© 2025 YeeDee. Всі права захищені.</p>
                 </div>
                 <div className="mailing">
-                    <img src={mailImg} alt="Main" />
+                    <img src={mailImg} alt="email електрона пошта" loading="lazy"/>
                     <a href="mailto:info@yeedee.com.ua">info@yeedee.com.ua</a>
                 </div>
                 <div className="links">
