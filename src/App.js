@@ -3,6 +3,7 @@ import "./App.css";
 import "./styles/Header.css";
 import "./styles/Main.css";
 import "./styles/Footer.css";
+import formLogo from "./icons/form_logo.png";
 import telegramLogo from "./icons/telegram_logo.svg";
 import yeedeeLogo from "./icons/yeedee_logo.svg";
 import dollarIcon from "./icons/dollar_icon.svg";
@@ -88,15 +89,15 @@ const App = () => {
                         <li><a href="#partnership">Партнерство</a></li>
                     </ul>
                 </nav>
-                <a href='https://t.me/YeeStore_Bot' className="bot-button">
-                    <img src={telegramLogo} alt='telegram logo'/>
-                    <span>Наш Telegram bot</span>
+                <a href='https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/edit?hl=uk' className="bot-button">
+                    <img src={formLogo} alt='form logo'/>
+                    <b>Waitlist YeeDee</b>
                 </a>
             </header>
             <div ref={dividerRef} className="header-div"></div>
             <div className="qr_code">
                 <span>Скануй або натискай</span>
-                <a href='https://t.me/YeeStore_Bot'>
+                <a href='https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/edit?hl=uk'>
                     <img src={qr_code} alt="qr link to telegram"/>
                 </a>
             </div>
