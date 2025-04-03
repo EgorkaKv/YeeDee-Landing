@@ -89,7 +89,7 @@ const App = () => {
                         <li><a href="#partnership">Партнерство</a></li>
                     </ul>
                 </nav>
-                <a href='https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/edit?hl=uk' className="bot-button">
+                <a href='https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/viewform?hl=uk&hl=uk&edit_requested=true' className="bot-button">
                     <img src={formLogo} alt='form logo'/>
                     <b>Waitlist YeeDee</b>
                 </a>
@@ -97,7 +97,7 @@ const App = () => {
             <div ref={dividerRef} className="header-div"></div>
             <div className="qr_code">
                 <span>Скануй або натискай</span>
-                <a href='https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/edit?hl=uk'>
+                <a href='https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/viewform?hl=uk&hl=uk&edit_requested=true'>
                     <img src={qr_code} alt="qr link to telegram"/>
                 </a>
             </div>
@@ -109,9 +109,9 @@ const App = () => {
                     <h3>Це проект, місія якого боротися з харчовими відходами. Ми створюємо сервіси, що об'єднують людей
                         і бізнес навколо ідеї розумного споживання продуктів харчування.</h3>
                     <img src={yeedeeLogo} alt="Логотип YeeDee - економія на продуктах" className="img_logo"/>
-                    <a href="https://t.me/YeeStore_Bot" className="try-tg-btn">
-                        <span>Спробувати в Telegram</span>
-                        <img src={telegramLogo} alt="Логотип Telegram"/>
+                    <a href="https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/viewform?hl=uk&hl=uk&edit_requested=true" className="try-tg-btn">
+                        <span>Запис у Waitlist</span>
+                        {/* <img src={formLogo} alt="Форма"/> */}
                     </a>
                 </div>
             </section>
