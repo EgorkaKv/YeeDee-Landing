@@ -1,0 +1,90 @@
+.cta-section {
+  position: relative;
+  background: white;
+  padding: 40px;
+  z-index: 22;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: -18px; /* высота рваного края */
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: url('/piper_bg.svg') repeat-x;
+  /*background: url('/short_paper_bg.svg') repeat-x;*/
+  background-size: cover; /* или cover */
+}
+
+.cta-section::after {
+  content: "";
+  position: absolute;
+  bottom: -18px; /* высота рваного края */
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: url('/piper_bg.svg') repeat-x;
+  /*background: url('/short_paper_bg.svg') repeat-x;*/
+  background-size: cover; /* или cover */
+  /*transform: scaleX(-1); !* отражение по горизонтали *!*/
+  transform: scaleY(-1);
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.content-bottom {
+  justify-self: flex-end;
+}
+
+.cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  padding: 60px 50px 40px;
+}
+
+.cta-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.cta-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.cta-card button {
+  margin-top: 20px;
+  padding: 16px 65px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+.card_top {
+  background: #F8D308;
+}
+.card_top h3 {color: black;}
+
+.card_top p {color: black;}
+
+.card_top button {background-color: #00A082; color: white;}
+
+
+.card_bottom {
+  background: #00A082;
+  color: white;
+}
+
+.card_bottom h3 {color: white;}
+.card_bottom p {color: white;}
+.card_bottom button {background-color: #F8D308; color: black;}

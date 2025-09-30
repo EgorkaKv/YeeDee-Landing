@@ -1,0 +1,44 @@
+.steps-container {
+  position: relative;
+  /*margin-top: 50px;*/
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  /*margin-bottom: 50px;*/
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  left: -60px;
+  top: 0;
+}
+
+.line {
+  position: absolute;
+  left: -42px;
+  top: 38px;
+}
+
+/*.step-text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}*/
+
+.step-text h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+
+.step-text p {
+  margin: 0 0 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #626262;
+}
