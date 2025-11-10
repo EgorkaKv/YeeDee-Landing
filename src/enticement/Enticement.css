@@ -99,9 +99,18 @@
 }
 
 @media (max-width: 768px) {
+  .enticement {
+    padding: 0 0 20px;
+  }
   .enticement .cards {
     gap: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+  }
+
+  .enticement h2 {
+    font-size: 28px;
   }
 }
+
+

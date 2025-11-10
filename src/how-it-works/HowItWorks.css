@@ -77,3 +77,30 @@
   font-weight: 700;
   color: black;
 }
+
+@media(max-width: 768px) {
+
+  .how-it-works {
+    max-height: initial;
+  }
+
+  .how-it-works h2 {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .hiw-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hiw-content img {
+    max-height: 80vh;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}

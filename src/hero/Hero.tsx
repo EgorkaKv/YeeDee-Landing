@@ -4,6 +4,7 @@ import { QRCodeSVG } from 'qrcode.react'
 import Header from './Header';
 import Container from '../components/Container';
 import './Hero.css';
+import './Hero.mobile.css'
 import mainImageDesktop from '../assets/hero_img.png'
 import mainImageMobile from '../assets/hero_img_mobile.png'
 import QRCodeBackground from '../assets/qr-code-bg.svg';
@@ -37,12 +38,12 @@ function HeroSection() {
             <QRCodeSVG id='qr-code-content' value="https://forms.gle/paQH5E6vDLpwFTcB9"/>
           </div>
         )}
+        <picture className="hero__image" id="hero-img">
+          <source media="(min-width: 768px)" srcSet={mainImageDesktop}/>
+          <source media="(max-width: 767px)" srcSet={mainImageMobile}/>
+          <img src={mainImageMobile} alt="food package" />
+        </picture>
       </Container>
-      <picture>
-        <source media="(min-width: 768px)" srcSet={mainImageDesktop}/>
-        <source media="(max-width: 767px)" srcSet={mainImageMobile}/>
-        <img src={mainImageMobile} alt="food package" id="hero-img"/>
-      </picture>
     </section>
   );
 }

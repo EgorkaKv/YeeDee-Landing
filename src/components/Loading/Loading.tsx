@@ -9,7 +9,7 @@ const Loading: React.FC = () => {
         <div className="loading__circle"></div>
         <div className="loading__circle"></div>
       </div>
-      <p className="loading__text">Загрузка...</p>
+      <p className="loading__text">Loading...</p>
     </div>
   );
 };

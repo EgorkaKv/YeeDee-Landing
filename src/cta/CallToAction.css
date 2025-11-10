@@ -88,3 +88,41 @@
 .card_bottom h3 {color: white;}
 .card_bottom p {color: white;}
 .card_bottom button {background-color: #F8D308; color: black;}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 0;
+  }
+  .cta__container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 610px
+  }
+
+  .cta-content {
+    margin-bottom: 0;
+  }
+
+  .content-bottom {
+    position: relative;
+  }
+
+  .content-bottom img {
+    position: absolute;
+    top: -106px;
+    right: -5%;
+  }
+
+  .cta-card {
+    padding: 30px;
+    align-items: center;
+  }
+  .cta-card h3, p {
+    text-align: center;
+  }
+
+  .cta-card button {
+    padding: 16px 60px;
+  }
+}

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
 import './Header.css';
+import './Header.mobile.css'
 import logo from '../assets/logo.svg';
 import appStoreLogo from '../assets/appstore_logo.svg';
 import googlePlayLogo from '../assets/googleplay_logo.svg';
