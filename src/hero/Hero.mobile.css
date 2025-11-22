@@ -1,8 +1,9 @@
-@media (max-width: 430px) {
+@media (max-width: 767px) {
   .hero__container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    height:100vh;
   }
   .hero-content {
     order: 2;

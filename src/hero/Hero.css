@@ -8,10 +8,11 @@
 .hero__container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   padding: 0 20px;
   justify-content: space-between;
+  gap: 1.5rem; /* consistent spacing between children on large screens */
   position: relative;
+  height: 90vh;
 }
 
 .hero-content {
@@ -76,7 +77,6 @@
   height: 100%;
 }
 
-/* Адаптивные стили для изображения */
 .hero__image {
   display: block;
 }
@@ -89,32 +89,52 @@
   z-index: 1;
 }
 
-/*
-!* Мобильные стили *!
-@media (max-width: 767px) {
+
+
+/* Tablet adjustments: reduce the large spacing caused by 80vh height */
+@media (min-width: 768px) and (max-width: 1028px) {
   .hero__container {
+    /* let content size naturally and use gap for consistent spacing */
     height: auto;
-    min-height: 100vh;
+    min-height: 60vh;
     padding: 20px;
-    gap: 2rem;
+    gap: 1.5rem;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  /* keep hero-content width reasonable on tablet */
+  .hero-content {
+    width: 70%;
+    max-width: 620px;
+  }
+
+  #hero-img {
+    position: absolute;
+    right: -80px;
+    bottom: -75px;
+    height: 30rem;
+  }
+}
+
+/* Mobile: place image above text and ensure text above button */
+/* @media (max-width: 767px) {
+  #hero-img {
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    height: auto;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 8px auto;
+    order: -1; 
+    z-index: 2;
   }
 
   .hero-content {
     width: 100%;
     text-align: center;
     align-items: center;
+    gap: 0.75rem;
   }
-
-  .hero-content h1 {
-    font-size: 1.875rem;
-    text-align: center;
-  }
-
-  .hero-content p {
-    text-align: center;
-  }
-
-  .hero__image {
-    order: -1; !* Показываем изображение сверху на мобильных *!
-  }
-}*/
+} */

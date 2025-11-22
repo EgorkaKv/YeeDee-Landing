@@ -3,6 +3,8 @@
   background: white;
   padding: 40px;
   z-index: 22;
+  display: flex;
+  flex-direction: row;
 }
 
 .cta-section::before {
@@ -31,10 +33,18 @@
   transform: scaleY(-1);
 }
 
+.cta__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .cta-content {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  position: relative; /* allow absolute/overlap positioning of inner images */
 }
 
 .content-bottom {
@@ -97,7 +107,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px 16px;
-    gap: 610px
+    gap: 70px
   }
 
   .cta-content {
@@ -108,11 +118,11 @@
     position: relative;
   }
 
-  .content-bottom img {
+  /* .content-bottom img {
     position: absolute;
     top: -106px;
     right: -5%;
-  }
+  } */
 
   .cta-card {
     padding: 30px;
@@ -124,5 +134,120 @@
 
   .cta-card button {
     padding: 16px 60px;
+  }
+}
+
+/* ---------- Responsive image/layout rules ---------- */
+
+.cta-top-img,
+.cta-bottom-img,
+.cta-bottom-img-mobile,
+.cta-pc-img {
+  display: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet: 768px - 1028px
+   - container: column (two rows)
+   - each .cta-content row: card + image (card left, image right)
+*/
+@media (min-width: 768px) and (max-width: 1028px) {
+  .cta__container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 24px;
+  }
+
+  .cta-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+  }
+
+  /* target the bottom row (the element has both classes) and enforce smaller gap */
+  .cta-content.content-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  /* make the top image overlap the top card */
+  .cta__container > .cta-content:first-child .cta-card {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta__container > .cta-content:first-child .cta-top-img {
+    display: block;
+    max-width: 48%;
+    margin-left: -50px; /* pull image left to overlap the card */
+    z-index: 2;
+  }
+
+  /* ensure top row is card then image (markup already card then image)
+     bottom row markup has card then image as well (we ensured in JSX)
+  */
+  .cta-top-img,
+  .cta-bottom-img {
+    display: block;
+    max-width: 48%;
+  }
+
+  .cta-bottom-img-mobile,
+  .cta-pc-img {
+    display: none;
+  }
+}
+
+/* Desktop: >= 1029px
+   - show single large pc image between the two CTA rows
+   - hide the separate top/bottom images
+*/
+@media (min-width: 1029px) {
+  .cta__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cta-content {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-top-img,
+  .cta-bottom-img,
+  .cta-bottom-img-mobile {
+    display: none;
+  }
+
+  .cta-pc-img {
+    display: block;
+    max-width: 520px;
+    margin: 0 24px;
+    height: auto;
+  }
+}
+
+/* Mobile-specific: show mobile bottom image (absolute positioned as before) */
+@media (max-width: 767px) {
+  .cta-bottom-img-mobile {
+    display: block;
+    max-width: 60%;
+  }
+
+  .content-bottom .cta-bottom-img-mobile {
+    position: absolute;
+    top: -106px;
+    right: -5%;
   }
 }
