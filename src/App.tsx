@@ -1,4 +1,4 @@
-import {lazy, Suspense, useEffect, useState} from "react";
+import {lazy, Suspense} from "react";
 import './App.css'
 import Layout from "./components/Layout/Layout";
 import HeroSection from "./hero/Hero.tsx";
@@ -13,16 +13,6 @@ import ScrollToTop from "./ScrollToTop.tsx";
 
 
 function App() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -32,7 +22,7 @@ function App() {
       <Benefits/>
       <Enticement/>
       <FaqSection/>
-      <CallToActionSection isMobile={isMobile}/>
+      <CallToActionSection/>
       <Footer/>
       <ScrollToTop/>
       {/*<div
