@@ -1,0 +1,124 @@
+.faq-section {
+  background: linear-gradient(to bottom, #FF9516, #F8D308);
+  padding: 20px 0 60px;
+}
+
+.faq__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 16px;
+  padding-bottom: 0px;
+}
+
+.faq-section h2 {
+  color: white;
+}
+
+.accordion {
+  /*width: 100%;*/
+  /*max-width: 500px;*/
+  min-width: 800px;
+  margin: 0 auto;
+  background-color: #00A082;
+  padding: 30px;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-title {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 24px 0 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Убираем все возможные границы и выделения */
+  outline: none;
+  box-shadow: none;
+}
+
+.accordion-title:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.accordion-title:active {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.accordion-title:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.triangle-icon {
+  display: inline-block;
+  transition: transform 0.3s;
+  vertical-align: middle;
+  margin-right: 8px;
+  transform: rotate(0deg);
+  height: fit-content;
+}
+
+.triangle-icon.open {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  background: #00A082;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0;
+}
+
+.accordion-content.open {
+  max-height: 200px;
+  opacity: 1;
+  padding-bottom: 10px;
+}
+
+.accordion-content p {
+  margin: 0;
+  color: white;
+  max-width: 60%;
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-out 0.1s;
+}
+
+.accordion-content.open p {
+  transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  .faq__container {
+    padding: 0 12px;
+  }
+  .accordion {
+    min-width: initial;
+    padding: 20px;
+  }
+
+  .accordion-content p {
+    max-width: 100%;
+  }
+}

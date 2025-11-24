@@ -1,0 +1,139 @@
+.benefits {
+  background: linear-gradient(to bottom, #FF9516, #F8D308);
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.benefits__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.benefits h2 {
+  font-size: 2.25rem;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits p {
+  color: white;
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Wide card spans both columns */
+.benefits__card--wide {
+  grid-column: 1 / -1;
+  padding: 28px 50px;
+  gap: 34px;
+}
+
+/* Mobile layout - все карточки в один столбец */
+@media (max-width: 768px) {
+  .benefits {
+    padding: 2rem 0;
+  }
+
+  .benefits__container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .benefits__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Убираем специальное поведение для широкой карточки в мобильной версии */
+  .benefits__card--wide {
+    grid-column: unset;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .benefits {
+    padding: 2rem 0;
+  }
+
+  .benefits__container {
+    gap: 1rem
+  }
+
+  .benefits__container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+  }
+
+  .benefits__grid {
+    gap: 1rem;
+  }
+}
+
+.benefit-card {
+  display: flex;
+  background: #00A082;
+  border-radius: 25px;
+  /*width: 560px;*/
+  width: 100%;
+  /*height: 189px;*/
+  align-items: center;
+  padding: 28px 18px;
+  box-sizing: border-box;
+  gap: 14px;
+}
+
+/*
+!* широкая карточка *!
+.benefits__card--wide {
+  grid-column: span 2;
+  padding: 28px 50px;
+  gap: 34px;
+}*/
+
+.benefit-card img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.benefit-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefit-card__text h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.benefit-card__text p {
+  font-size: 1rem;
+  margin: 0;
+  max-width: 384px;
+}
+
+.full-width-card p{
+  max-width: none;
+}
+
+.benefits__card--wide p {
+  max-width: 756px;
+}

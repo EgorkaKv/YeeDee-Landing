@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Your favorite food - 2 times cheaper",
+    "subtitle": "Buy surprise packages from establishments that didn't have time to sell food at regular price. Get the same dishes from the menu - but much cheaper.",
+    "button": "Try YeeDee"
+  },
+  "hiw": {
+    "title": "It's just convenient and profitable",
+    "step_1__title": "Browse delicious sets in the app",
+    "step_1__description": "From cafes and bakeries nearby",
+    "step_2__title": "Book your choice with 30-70% discount",
+    "step_2__description": "It doesn't get more profitable",
+    "step_3__title": "Pick up at the specified time",
+    "step_3__description": "Enjoy your profitable purchase",
+    "summary": "👉 Save in 3 clicks!"
+  },
+  "benefits": {
+    "title": "Why is it profitable?",
+    "title-economy": "Save up to 150 UAH on each package",
+    "description-economy": "Pay 2-3 times less than at the establishment. Same dishes - at new (lower) prices",
+    "title-surprise": "Something new every day",
+    "description-surprise": "A surprise from your favorite establishment - you never know what delicacies will delight you today.",
+    "title-time": "Fast, convenient, no queues",
+    "description-time": "Choose in the app, pay and simply pick up your order at a convenient time.",
+    "title-ecology": "Help the planet",
+    "description-ecology": "Buy food that could become waste. Less waste - better for ecology",
+    "title-discount": "Lower price, same quality!",
+    "description-discount": "No spoiled products. Establishments cook food but don't always guess the right quantity. Instead of throwing away what they didn't have time to sell - they offer it to you with a discount."
+  },
+  "enticement": {
+    "title": "The most interesting is inside",
+    "product_card_1__title": "Pastry set",
+    "product_card_1__address": "Volodymyra Velykoho, 58",
+    "product_card_1__old_price": "120 ₴",
+    "product_card_1__new_price": "60 ₴",
+    "product_card_2__title": "Pastry set",
+    "product_card_2__address": "Volodymyra Velykoho, 58",
+    "product_card_2__old_price": "120 ₴",
+    "product_card_2__new_price": "60 ₴",
+    "product_card_3__title": "Pastry set",
+    "product_card_3__address": "Volodymyra Velykoho, 58",
+    "product_card_3__old_price": "120 ₴",
+    "product_card_3__new_price": "60 ₴",
+    "product_card__button": "Buy in app"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "count": 5,
+    "q1": {
+      "question": "When can I pick up my package?",
+      "answer": "The establishment indicates on the product card the time interval when you can receive your surprise. Usually it's 16:00 - 21:00"
+    },
+    "q2": {
+      "question": "What's included in the package?",
+      "answer": "The package is a surprise. But you know exactly the category: pastries, sandwiches, desserts, lunches, etc.\nAll packages are formed by the establishment at the end of the day from what they didn't have time to sell, but everything is still fresh and delicious."
+    },
+    "q3": {
+      "question": "Is this really not spoiled food?",
+      "answer": "No. All dishes in the packages are prepared today, from the same products that go into the regular menu.\nIt's just that by the end of the day the establishment doesn't have time to sell everything and instead of throwing it away, they offer it to you with a discount."
+    },
+    "q4": {
+      "question": "Why such a big discount?",
+      "answer": "Because it's better than throwing food away.\nThe establishment has already spent resources on cooking, and is ready to return at least part of it by offering you a good price."
+    },
+    "q5": {
+      "question": "Can I get my money back if I don't like it?",
+      "answer": "Returns are possible if there's really something wrong with the package: the food is spoiled or doesn't match the stated category.\nIn other cases - like in regular cafes - returns are not provided, since the package is already prepared especially for you."
+    }
+  },
+  "cta": {
+    "card_top": {
+      "title": "New packages every day - don't miss yours",
+      "description": "No registrations or cards needed - just see what's nearby with a discount",
+      "button": "Download YeeDee"
+    },
+    "card_bottom": {
+      "title": "Want to sell mystery boxes?",
+      "description": "We value conscious Ukrainian business! Submit an application and we'll contact you",
+      "button": "Connect establishment"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.enticement {
+  position: relative;
+  background: white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  z-index: 15;
+
+}
+
+.enticement__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  /* Убираем ограничение по ширине для container на мобильных */
+  width: 100%;
+}
+
+.enticement::before {
+  content: "";
+  position: absolute;
+  top: -18px; /* высота рваного края */
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: url('/piper_bg.svg') repeat-x;
+  /*background: url('/short_paper_bg.svg') repeat-x;*/
+  background-size: cover; /* или cover */
+  z-index: 22;
+}
+
+.enticement::after {
+  content: "";
+  position: absolute;
+  bottom: -18px; /* высота рваного края */
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: url('/piper_bg.svg') repeat-x;
+  /*background: url('/short_paper_bg.svg') repeat-x;*/
+  background-size: cover; /* или cover */
+  /*transform: scaleX(-1); !* отражение по горизонтали *!*/
+  transform: scaleY(-1);
+  z-index: 22;
+}
+
+.enticement h2 {
+  font-size: 2.25rem;
+  text-align: center;
+  margin: 10px;
+  color: black;
+  font-weight: 700;
+}
+
+.enticement .cards {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  /* Настройки для больших экранов - карточки по центру */
+  justify-content: center;
+  flex-wrap: nowrap;
+
+  /* Настройки для мобильных - горизонтальная прокрутка */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+
+  /* Скрываем полосу прокрутки */
+  -ms-overflow-style: none;
+}
+
+.enticement .cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (min-width: 1200px) {
+  .enticement .cards {
+    gap: 60px;
+    padding: 20px 0;
+    overflow-x: visible;
+  }
+}
+
+@media (max-width: 1199px) {
+  .enticement__container {
+    padding: 0;
+  }
+
+  .enticement .cards {
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .enticement {
+    padding: 0 0 20px;
+  }
+  .enticement .cards {
+    gap: 15px;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+  }
+
+  .enticement h2 {
+    font-size: 28px;
+  }
+}
+
+

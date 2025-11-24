@@ -1,0 +1,253 @@
+.cta-section {
+  position: relative;
+  background: white;
+  padding: 40px;
+  z-index: 22;
+  display: flex;
+  flex-direction: row;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: -18px; /* высота рваного края */
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: url('/piper_bg.svg') repeat-x;
+  /*background: url('/short_paper_bg.svg') repeat-x;*/
+  background-size: cover; /* или cover */
+}
+
+.cta-section::after {
+  content: "";
+  position: absolute;
+  bottom: -18px; /* высота рваного края */
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: url('/piper_bg.svg') repeat-x;
+  /*background: url('/short_paper_bg.svg') repeat-x;*/
+  background-size: cover; /* или cover */
+  /*transform: scaleX(-1); !* отражение по горизонтали *!*/
+  transform: scaleY(-1);
+}
+
+.cta__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative; /* allow absolute/overlap positioning of inner images */
+}
+
+.content-bottom {
+  justify-self: flex-end;
+}
+
+.cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  padding: 60px 50px 40px;
+}
+
+.cta-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.cta-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.cta-card button {
+  margin-top: 20px;
+  padding: 16px 65px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+.card_top {
+  background: #F8D308;
+}
+.card_top h3 {color: black;}
+
+.card_top p {color: black;}
+
+.card_top button {background-color: #00A082; color: white;}
+
+
+.card_bottom {
+  background: #00A082;
+  color: white;
+}
+
+.card_bottom h3 {color: white;}
+.card_bottom p {color: white;}
+.card_bottom button {background-color: #F8D308; color: black;}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 0;
+  }
+  .cta__container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 70px
+  }
+
+  .cta-content {
+    margin-bottom: 0;
+  }
+
+  .content-bottom {
+    position: relative;
+  }
+
+  /* .content-bottom img {
+    position: absolute;
+    top: -106px;
+    right: -5%;
+  } */
+
+  .cta-card {
+    padding: 30px;
+    align-items: center;
+  }
+  .cta-card h3, p {
+    text-align: center;
+  }
+
+  .cta-card button {
+    padding: 16px 60px;
+  }
+}
+
+/* ---------- Responsive image/layout rules ---------- */
+
+.cta-top-img,
+.cta-bottom-img,
+.cta-bottom-img-mobile,
+.cta-pc-img {
+  display: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet: 768px - 1028px
+   - container: column (two rows)
+   - each .cta-content row: card + image (card left, image right)
+*/
+@media (min-width: 768px) and (max-width: 1028px) {
+  .cta__container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 24px;
+  }
+
+  .cta-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+  }
+
+  /* target the bottom row (the element has both classes) and enforce smaller gap */
+  .cta-content.content-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  /* make the top image overlap the top card */
+  .cta__container > .cta-content:first-child .cta-card {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta__container > .cta-content:first-child .cta-top-img {
+    display: block;
+    max-width: 48%;
+    margin-left: -50px; /* pull image left to overlap the card */
+    z-index: 2;
+  }
+
+  /* ensure top row is card then image (markup already card then image)
+     bottom row markup has card then image as well (we ensured in JSX)
+  */
+  .cta-top-img,
+  .cta-bottom-img {
+    display: block;
+    max-width: 48%;
+  }
+
+  .cta-bottom-img-mobile,
+  .cta-pc-img {
+    display: none;
+  }
+}
+
+/* Desktop: >= 1029px
+   - show single large pc image between the two CTA rows
+   - hide the separate top/bottom images
+*/
+@media (min-width: 1029px) {
+  .cta__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cta-content {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-top-img,
+  .cta-bottom-img,
+  .cta-bottom-img-mobile {
+    display: none;
+  }
+
+  .cta-pc-img {
+    display: block;
+    max-width: 520px;
+    margin: 0 24px;
+    height: auto;
+  }
+}
+
+/* Mobile-specific: show mobile bottom image (absolute positioned as before) */
+@media (max-width: 767px) {
+  .cta-bottom-img-mobile {
+    display: block;
+    max-width: 60%;
+  }
+
+  .content-bottom .cta-bottom-img-mobile {
+    position: absolute;
+    top: -106px;
+    right: -5%;
+  }
+}
