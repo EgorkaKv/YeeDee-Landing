@@ -30,7 +30,11 @@ function HeroSection() {
         <div className="hero-content">
           <h1>{t('hero.title')}</h1>
           <p>{t('hero.subtitle')}</p>
-          <button>{t('hero.button')}</button>
+          <button
+          onClick={() => {
+            window.open("https://docs.google.com/forms/d/1JiImUWXw1JgqsLLKQSDHKaZwUCKDo5mX84o3hv0EswA/viewform?hl=uk&hl=uk&edit_requested=true", "_blank");
+          }}
+          >{t('hero.button')}</button>
         </div>
         {!isMobile && (
           <div className='qr-code'>
